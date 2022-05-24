@@ -1,11 +1,14 @@
 <?php
+ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__."./../../crud-slim"); 
+ $dotenv->load();
 
 $database_config =[
+   
     "driver"=>"mysql",
-    "host"=>"127.0.0.1",
-    "database"=>"octagon",
-    "username"=>"cire",
-    "password"=>"MKUe1d@1CT",
+    "host"=>"$_ENV['HOST']",
+    "database"=>"$_ENV['DB_NAME']",
+    "username"=>"$_ENV['USER_NAME']",
+    "password"=>"$_ENV['PASSWORD']",
     "charset"=>"utf8",
     "collation"=>"utf8_unicode_ci",
     "prefix"=>""
